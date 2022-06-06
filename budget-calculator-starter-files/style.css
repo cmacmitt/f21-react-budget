@@ -9,7 +9,7 @@
 }
 
 .clearfix::after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -37,8 +37,7 @@ body {
 
 .top {
   height: 300px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url(images/back.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -47,7 +46,7 @@ body {
 .budget {
   width: 350px;
   margin: auto;
-  padding-top: 30px;
+  padding-top: 30px; 
   color: #fff;
 }
 
@@ -222,7 +221,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-.income__title {
+.icome__title {
   color: #28b9b5;
 }
 .expenses__title {
