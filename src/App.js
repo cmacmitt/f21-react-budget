@@ -51,18 +51,20 @@ function App() {
       date: Date.now(),
     },
   ];
+
   const [transactions, setTransactions] = useState(initialState);
 
   const incomes = transactions.filter(
     (transaction) => transaction.type === "income"
   );
+
   const expenses = transactions.filter(
     (transaction) => transaction.type === "expense"
   );
 
   return (
     <>
-      <BudgetHeader />
+      <BudgetHeader incomes={incomes} expenses={expenses} />
 
       <div className="bottom">
         <AddTransactionForm />

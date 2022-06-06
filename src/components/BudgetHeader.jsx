@@ -1,19 +1,38 @@
 import styles from "./BudgetHeader.module.css";
 import BudgetSummary from "./BudgetSummary";
 
-const BudgetHeader = () => {
+const BudgetHeader = ({ incomes, expenses }) => {
+  const incomeTotal = incomes.reduce(
+    (total, transaction) => total + transaction.amount,
+    0
+  );
+
+  const expenseTotal = expenses.reduce(
+    (total, transaction) => total + transaction.amount,
+    0
+  );
+
+  const displayDate = new Date().toLocaleDateString("en-CA", {
+    month: "long",
+
+    year: "numeric",
+  });
+  const netIncome = incomeTotal - expenseTotal;
+
   return (
     <div className={styles.top}>
       <div className={styles.container}>
         <div className={styles.title}>
           Available Budget in
-          <span className={styles.month}> April 2020</span>:
+          <span className={styles.month}> {displayDate}</span>:
         </div>
 
-        <div className={styles.value}>+ $225.10</div>
+        <div className={styles.value}>
+          {netIncome >= 0 ? "+" : "-"} ${netIncome.toFixed(2)}
+        </div>
 
-        <BudgetSummary type="incomes" />
-        <BudgetSummary type="expenses" />
+        <BudgetSummary type="incomes" total={incomeTotal} />
+        <BudgetSummary type="expenses" total={expenseTotal} />
       </div>
     </div>
   );
