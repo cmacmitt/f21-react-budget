@@ -39,6 +39,7 @@ body {
 .container {
   width: 1000px;
   margin: 60px auto;
+  display: flex;
 }
 
 h2 {

@@ -2,7 +2,6 @@ import styles from "./BudgetHeader.module.css";
 import BudgetSummary from "./BudgetSummary";
 
 const BudgetHeader = () => {
-  console.log(styles);
   return (
     <div className={styles.top}>
       <div className={styles.container}>
