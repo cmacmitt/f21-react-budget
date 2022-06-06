@@ -1,4 +1,4 @@
-const AddForm = () => {
+const AddTransactionForm = () => {
   return (
     <div className="add">
       <div className="add__container">
@@ -16,4 +16,4 @@ const AddForm = () => {
   );
 };
 
-export default AddForm;
+export default AddTransactionForm;

@@ -1,10 +1,10 @@
-const ExpenseItem = () => {
+const Transaction = ({ type }) => {
   return (
     <div className="item" data-transaction-id="4">
       <div className="item__description">Car Payment</div>
       <div className="right">
         <div className="item__value">- $299.99</div>
-        <div className="item__percentage">52%</div>
+        {type === "expense" && <div className="item__percentage">52%</div>}
         <div className="item__delete">
           <button className="item__delete--btn">
             <i className="ion-ios-close-outline"></i>
@@ -16,4 +16,4 @@ const ExpenseItem = () => {
   );
 };
 
-export default ExpenseItem;
+export default Transaction;

@@ -1,8 +1,7 @@
 import "./App.css";
 import BudgetHeader from "./components/BudgetHeader";
-import AddForm from "./components/AddForm";
-import IncomeList from "./components/IncomeList";
-import ExpenseList from "./components/ExpenseList";
+import AddTransactionForm from "./components/AddTransactionForm";
+import TransactionList from "./components/TransactionList";
 
 function App() {
   return (
@@ -12,11 +11,11 @@ function App() {
       </div>
 
       <div className="bottom">
-        <AddForm />
+        <AddTransactionForm />
 
         <div className="container">
-          <IncomeList />
-          <ExpenseList />
+          <TransactionList type="income" />
+          <TransactionList type="expense" />
         </div>
       </div>
     </>
