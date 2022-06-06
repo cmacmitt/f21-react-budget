@@ -1,7 +1,7 @@
 import styles from "./TransactionList.module.css";
 import Transaction from "./Transaction";
 
-const TransactionList = ({ type, transactions }) => {
+const TransactionList = ({ type, transactions, totalIncome }) => {
   // temporary hack until we fix the styles
   if (type === "incomes") type = "income";
   return (
@@ -13,6 +13,7 @@ const TransactionList = ({ type, transactions }) => {
             key={transaction.id}
             type={transaction.type}
             details={transaction}
+            totalIncome={totalIncome}
           />
         ))}
       </div>

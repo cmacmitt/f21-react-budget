@@ -58,20 +58,46 @@ function App() {
     (transaction) => transaction.type === "income"
   );
 
+  const incomeTotal = incomes.reduce(
+    (total, transaction) => total + transaction.amount,
+    0
+  );
+
   const expenses = transactions.filter(
     (transaction) => transaction.type === "expense"
   );
+
+  const handleAddTransaction = (amount, description) => {
+    const type = +amount > 0 ? "income" : "expense";
+
+    setTransactions((prevState) => {
+      return [
+        ...prevState,
+        {
+          id: generateRandomId(),
+          type: type,
+          amount: Math.abs(+amount),
+          description: description,
+          date: Date.now(),
+        },
+      ];
+    });
+  };
 
   return (
     <>
       <BudgetHeader incomes={incomes} expenses={expenses} />
 
       <div className="bottom">
-        <AddTransactionForm />
+        <AddTransactionForm addTransaction={handleAddTransaction} />
 
         <div className="container">
           <TransactionList type="income" transactions={incomes} />
-          <TransactionList type="expense" transactions={expenses} />
+          <TransactionList
+            type="expense"
+            transactions={expenses}
+            totalIncome={incomeTotal}
+          />
         </div>
       </div>
     </>
