@@ -17,8 +17,9 @@ const BudgetHeader = ({ incomes, expenses }) => {
 
     year: "numeric",
   });
-  const netIncome = incomeTotal - expenseTotal;
 
+  const netIncome = incomeTotal - expenseTotal;
+  const expensePercentage = ((expenseTotal / incomeTotal) * 100).toFixed();
   return (
     <div className={styles.top}>
       <div className={styles.container}>
@@ -32,7 +33,11 @@ const BudgetHeader = ({ incomes, expenses }) => {
         </div>
 
         <BudgetSummary type="incomes" total={incomeTotal} />
-        <BudgetSummary type="expenses" total={expenseTotal} />
+        <BudgetSummary
+          type="expenses"
+          total={expenseTotal}
+          percentage={expensePercentage}
+        />
       </div>
     </div>
   );
