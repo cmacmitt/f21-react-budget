@@ -1,0 +1,17 @@
+.income {
+  float: left;
+  width: 475px;
+  margin-right: 50px;
+}
+
+.expenses {
+  float: left;
+  width: 475px;
+}
+
+.income__title {
+  color: #28b9b5;
+}
+.expenses__title {
+  color: #ff5049;
+}

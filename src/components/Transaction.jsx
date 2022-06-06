@@ -1,17 +1,19 @@
+import styles from "./Transaction.module.css";
+
 const Transaction = ({ type }) => {
   return (
-    <div className="item" data-transaction-id="4">
-      <div className="item__description">Car Payment</div>
+    <div className={styles.item} data-transaction-id="4">
+      <div className={styles.description}>Car Payment</div>
       <div className="right">
-        <div className="item__value">- $299.99</div>
-        {type === "expense" && <div className="item__percentage">52%</div>}
-        <div className="item__delete">
-          <button className="item__delete--btn">
+        <div className={styles.value}>- $299.99</div>
+        {type === "expense" && <div className={styles.percentage}>52%</div>}
+        <div className={styles.delete}>
+          <button className={styles["delete--btn"]}>
             <i className="ion-ios-close-outline"></i>
           </button>
         </div>
       </div>
-      <div className="item__date">Apr. 21st, 2020</div>
+      <div className={styles.date}>Apr. 21st, 2020</div>
     </div>
   );
 };

@@ -1,14 +1,16 @@
+import styles from "./AddTransactionForm.module.css";
+
 const AddTransactionForm = () => {
   return (
-    <div className="add">
-      <div className="add__container">
+    <div className={styles.add}>
+      <div className={styles.container}>
         <input
           type="text"
-          className="add__description"
+          className={styles.description}
           placeholder="Add description"
         />
-        <input type="number" className="add__value" placeholder="Value" />
-        <button className="add__btn">
+        <input type="number" className={styles.value} placeholder="Value" />
+        <button className={styles.btn}>
           <i className="ion-ios-checkmark-outline"></i>
         </button>
       </div>

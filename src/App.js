@@ -6,9 +6,7 @@ import TransactionList from "./components/TransactionList";
 function App() {
   return (
     <>
-      <div className="top">
-        <BudgetHeader />
-      </div>
+      <BudgetHeader />
 
       <div className="bottom">
         <AddTransactionForm />

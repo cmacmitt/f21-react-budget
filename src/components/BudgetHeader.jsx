@@ -1,17 +1,21 @@
+import styles from "./BudgetHeader.module.css";
 import BudgetSummary from "./BudgetSummary";
 
 const BudgetHeader = () => {
+  console.log(styles);
   return (
-    <div className="budget">
-      <div className="budget__title">
-        Available Budget in
-        <span className="budget__title--month">April 2020</span>:
+    <div className={styles.top}>
+      <div className={styles.container}>
+        <div className={styles.title}>
+          Available Budget in
+          <span className={styles.month}> April 2020</span>:
+        </div>
+
+        <div className={styles.value}>+ $225.10</div>
+
+        <BudgetSummary type="incomes" />
+        <BudgetSummary type="expenses" />
       </div>
-
-      <div className="budget__value">+ $225.10</div>
-
-      <BudgetSummary type="incomes" />
-      <BudgetSummary type="expenses" />
     </div>
   );
 };
